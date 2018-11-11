@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Time!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <!--Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!--personal Javascript-->
+    <script src="logic.js"></script>
+</head>
+<body>
+    <div class="jumbotron bg-dark mx-auto pb-3" style="max-width: 80rem;">
+        <h1 class="text-white mb-5" style="text-align: center;">Train Time!</h1>
+    </div>
+    <div class="card border border-primary mx-auto mb-3" style="max-width: 80rem;">
+        <div class="card-header text-white bg-primary">Current Train Schedule</div>
+        <div class="card-body">
+        <table class="table" id="entries">
+            <thead>
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody id="newEntryList">
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="card border border-primary mx-auto" style="max-width: 80rem;">
+        <div class="card-header text-white bg-primary">Add Train</div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                  <label for="train-name">Train Name</label>
+                  <input type="text" class="form-control" id="train-name">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination">
+                </div>
+                <div class="form-group">
+                    <label for="first-train">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="first-train">
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency (min)</label>
+                    <input type="text" class="form-control" id="frequency">
+                </div>                
+                <button type="submit" class="btn btn-primary mt-3" id="entry-submit">Submit</button>
+              </form>
+            </div>
+        </div>
+</body>
+</html>
